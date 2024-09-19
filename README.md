@@ -2,7 +2,7 @@
   <code>speed-cloudflare-cli-lite</code>
 </h1>
 <h3 align="center">
-  Measure the speed and consistency of your internet connection using <a href="https://speed.cloudflare.com/">speed.cloudflare.com</a>. Doesn't run 100MB download speed test by default
+  Measure the speed and consistency of your internet connection using <a href="https://speed.cloudflare.com/">speed.cloudflare.com</a>. Doesn't run 100MB download speed test by default.
 
 <p align="center">
     <a href="https://www.npmjs.com/package/speed-cloudflare-cli">
