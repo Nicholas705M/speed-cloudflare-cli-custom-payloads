@@ -9,31 +9,31 @@ const FORMAT = {
 };
 
 exports.bold = (...params) => {
-    return args.doPrintPlain 
-        ? params.join(' ')
-        : FORMAT.BOLD + params.join(' ') + FORMAT.CLEAN;
+    return args.doPrintColor 
+        ? FORMAT.BOLD + params.join(' ') + FORMAT.CLEAN
+        : params.join(' ');
 }
 
 exports.green = (...params) => {
-    return args.doPrintPlain 
-        ? params.join(' ')
-        : FORMAT.GREEN + params.join(' ') + FORMAT.CLEAN;
+    return args.doPrintColor 
+        ? FORMAT.GREEN + params.join(' ') + FORMAT.CLEAN
+        : params.join(' ');
 }
 
 exports.yellow = (...params) => {
-    return args.doPrintPlain 
-        ? params.join(' ')
-        : FORMAT.YELLOW + params.join(' ') + FORMAT.CLEAN;
+    return args.doPrintColor 
+        ? FORMAT.YELLOW + params.join(' ') + FORMAT.CLEAN
+        : params.join(' ');
 }
 
 exports.blue = (...params) => {
-    return args.doPrintPlain 
-        ? params.join(' ')
-        : FORMAT.BLUE + params.join(' ') + FORMAT.CLEAN;
+    return args.doPrintColor 
+        ? FORMAT.BLUE + params.join(' ') + FORMAT.CLEAN
+        : params.join(' ');
 }
 
 exports.magenta = (...params) => {
-    return args.doPrintPlain 
-        ? params.join(' ')
-        : FORMAT.MAGENTA + params.join(' ') + FORMAT.CLEAN;
+    return args.doPrintColor 
+        ? FORMAT.MAGENTA + params.join(' ') + FORMAT.CLEAN
+        : params.join(' ');
 }

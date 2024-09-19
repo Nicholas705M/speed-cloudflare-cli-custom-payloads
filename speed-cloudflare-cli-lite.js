@@ -281,8 +281,8 @@ Flags:
         Show this help message.
     -v || --version: (DOESN'T RUN SPEED TEST)
         Show the version of this command.
-    -p || --plain:
-        Remove bold/color formatting from speed test output.
+    -c || --color:
+        Add bold/color formatting to speed test output.
 `;
     console.log(HELP_TEXT);
 }
