@@ -10,7 +10,7 @@ const stats = require("./stats.js");
 const packageJson = require('./package.json');
 
 const commandName = path.basename(process.argv[0]) === 'node'
-    ? path.parse(process.argv[1]).name // Script name
+    ? 'node ' + path.parse(process.argv[1]).name // Script name
     : process.argv[0]; // If it's a globally installed command
 
 async function get(hostname, path) {

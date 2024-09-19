@@ -9,41 +9,31 @@ const FORMAT = {
 };
 
 exports.bold = (...params) => {
-    if (args.doPrintPlain) {
-        return params.join(' ');
-    }
-
-    return FORMAT.BOLD + params.join(' ') + FORMAT.CLEAN;
+    return args.doPrintPlain 
+        ? params.join(' ')
+        : FORMAT.BOLD + params.join(' ') + FORMAT.CLEAN;
 }
 
 exports.green = (...params) => {
-    if (args.doPrintPlain) {
-        return params.join(' ');
-    }
-
-    return FORMAT.GREEN + params.join(' ') + FORMAT.CLEAN;
+    return args.doPrintPlain 
+        ? params.join(' ')
+        : FORMAT.GREEN + params.join(' ') + FORMAT.CLEAN;
 }
 
 exports.yellow = (...params) => {
-    if (args.doPrintPlain) {
-        return params.join(' ');
-    }
-
-    return FORMAT.YELLOW + params.join(' ') + FORMAT.CLEAN;
+    return args.doPrintPlain 
+        ? params.join(' ')
+        : FORMAT.YELLOW + params.join(' ') + FORMAT.CLEAN;
 }
 
 exports.blue = (...params) => {
-    if (args.doPrintPlain) {
-        return params.join(' ');
-    }
-
-    return FORMAT.BLUE + params.join(' ') + FORMAT.CLEAN;
+    return args.doPrintPlain 
+        ? params.join(' ')
+        : FORMAT.BLUE + params.join(' ') + FORMAT.CLEAN;
 }
 
 exports.magenta = (...params) => {
-    if (args.doPrintPlain) {
-        return params.join(' ');
-    }
-
-    return FORMAT.MAGENTA + params.join(' ') + FORMAT.CLEAN;
+    return args.doPrintPlain 
+        ? params.join(' ')
+        : FORMAT.MAGENTA + params.join(' ') + FORMAT.CLEAN;
 }
