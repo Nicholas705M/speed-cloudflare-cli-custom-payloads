@@ -273,9 +273,6 @@ function printHelp() {
 `${packageJson.description}
 Usage: ${commandName} [options]
 
-NOTE:
-    LOOKS FOR EXACT FLAGS. ie. '${commandName} -abc' DOESN'T WORK, BUT '${commandName} -a -b -c' DOES.
-
 Flags:
     -h || --help: (DOESN'T RUN SPEED TEST)
         Show this help message.
