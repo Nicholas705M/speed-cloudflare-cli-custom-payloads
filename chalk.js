@@ -1,41 +1,41 @@
 const args = require('./args.js');
 
-exports.magenta = (...args) => {
+exports.magenta = (...params) => {
     if (args.doPrintPlain) {
-        return args.join(' ');
+        return params.join(' ');
     }
 
-    return `\u001b[35m${args.join(' ')}\u001b[0m`;
+    return `\u001b[35m${params.join(' ')}\u001b[0m`;
 }
 
-exports.bold = (...args) => {
+exports.bold = (...params) => {
     if (args.doPrintPlain) {
-        return args.join(' ');
+        return params.join(' ');
     }
 
-    return `\u001b[1m${args.join(' ')}\u001b[0m`;
+    return `\u001b[1m${params.join(' ')}\u001b[0m`;
 }
 
-exports.yellow = (...args) => {
+exports.yellow = (...params) => {
     if (args.doPrintPlain) {
-        return args.join(' ');
+        return params.join(' ');
     }
 
-    return `\u001b[33m${args.join(' ')}\u001b[0m`;
+    return `\u001b[33m${params.join(' ')}\u001b[0m`;
 }
 
-exports.green = (...args) => {
+exports.green = (...params) => {
     if (args.doPrintPlain) {
-        return args.join(' ');
+        return params.join(' ');
     }
 
-    return `\u001b[32m${args.join(' ')}\u001b[0m`;
+    return `\u001b[32m${params.join(' ')}\u001b[0m`;
 }
 
-exports.blue = (...args) => {
+exports.blue = (...params) => {
     if (args.doPrintPlain) {
-        return args.join(' ');
+        return params.join(' ');
     }
 
-    return `\u001b[34m${args.join(' ')}\u001b[0m`;
+    return `\u001b[34m${params.join(' ')}\u001b[0m`;
 }
