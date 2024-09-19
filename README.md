@@ -1,8 +1,8 @@
 <h1 align="center">
-  <code>speed-cloudflare-cli</code>
+  <code>speed-cloudflare-cli-custom-payloads</code>
 </h1>
 <h3 align="center">
-  Measure the speed and consistency of your internet connection using <a href="https://speed.cloudflare.com/">speed.cloudflare.com</a>
+  Measure the speed and consistency of your internet connection using <a href="https://speed.cloudflare.com/">speed.cloudflare.com</a>. Can set custom payload sizes (default: 100kB, 1MB, 10MB, and 25MB).
 </h3>
 
 <p align="center">
@@ -21,5 +21,5 @@
 
 # How to use
 ```bash
-npx speed-cloudflare-cli
+npx speed-cloudflare-cli-custom-payloads
 ```
