@@ -6,7 +6,7 @@ Flags:
 */
 
 
-exports.doFormat = !process.argv.includes('--plain');
+const { runHelp, doPrintPlain } = require('./args.js');
 
 const { performance } = require("perf_hooks");
 const https = require("https");
@@ -268,4 +268,21 @@ async function speedTest() {
     logUploadSpeed(uploadTests);
 }
 
-speedTest();
+function printHelp() {
+    HELP_TEXT = 
+`speed-cloudflare-cli-lite [options]
+
+Options:
+    -h || --help:
+        Print this message.
+    -p || --plain:
+        Remove bold/color formatting from speed test output.
+`;
+    console.log(HELP_TEXT);
+}
+
+if (!runHelp) {
+    speedTest();
+} else {
+    printHelp();
+}
