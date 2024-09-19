@@ -1,17 +1,17 @@
 #!/usr/bin/env node
 
-/*
-Flags:
---plain
-*/
-
-
-const { runHelp, doPrintPlain } = require('./args.js');
-
+const path = require('path');
 const { performance } = require("perf_hooks");
 const https = require("https");
+
+const args = require('./args.js');
 const { magenta, bold, yellow, green, blue } = require("./chalk.js");
 const stats = require("./stats.js");
+const packageJson = require('./package.json');
+
+const commandName = path.basename(process.argv[0]) === 'node'
+    ? path.parse(process.argv[1]).name // Script name
+    : process.argv[0]; // If it's a globally installed command
 
 async function get(hostname, path) {
     return new Promise((resolve, reject) => {
@@ -270,19 +270,33 @@ async function speedTest() {
 
 function printHelp() {
     HELP_TEXT = 
-`speed-cloudflare-cli-lite [options]
+`${packageJson.description}
+Usage: ${commandName} [options]
 
-Options:
-    -h || --help:
-        Print this message.
+NOTE:
+    LOOKS FOR EXACT FLAGS. ie. '${commandName} -abc' DOESN'T WORK, BUT '${commandName} -a -b -c' DOES.
+
+Flags:
+    -h || --help: (DOESN'T RUN SPEED TEST)
+        Show this help message.
+    -v || --version: (DOESN'T RUN SPEED TEST)
+        Show the version of this command.
     -p || --plain:
         Remove bold/color formatting from speed test output.
 `;
     console.log(HELP_TEXT);
 }
 
-if (!runHelp) {
-    speedTest();
-} else {
+
+function printVersion() {
+    console.log(packageJson.version);
+}
+
+
+if (args.showHelp) {
     printHelp();
+} else if (args.showVersion) {
+    printVersion();
+} else {
+    speedTest();
 }

@@ -1,7 +1,7 @@
-const { runHelp, doPrintPlain } = require('./args.js');
+const args = require('./args.js');
 
 exports.magenta = (...args) => {
-    if (doPrintPlain) {
+    if (args.doPrintPlain) {
         return args.join(' ');
     }
 
@@ -9,7 +9,7 @@ exports.magenta = (...args) => {
 }
 
 exports.bold = (...args) => {
-    if (doPrintPlain) {
+    if (args.doPrintPlain) {
         return args.join(' ');
     }
 
@@ -17,7 +17,7 @@ exports.bold = (...args) => {
 }
 
 exports.yellow = (...args) => {
-    if (doPrintPlain) {
+    if (args.doPrintPlain) {
         return args.join(' ');
     }
 
@@ -25,7 +25,7 @@ exports.yellow = (...args) => {
 }
 
 exports.green = (...args) => {
-    if (doPrintPlain) {
+    if (args.doPrintPlain) {
         return args.join(' ');
     }
 
@@ -33,7 +33,7 @@ exports.green = (...args) => {
 }
 
 exports.blue = (...args) => {
-    if (doPrintPlain) {
+    if (args.doPrintPlain) {
         return args.join(' ');
     }
 

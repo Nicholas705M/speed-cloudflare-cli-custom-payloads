@@ -1,10 +1,5 @@
 #!/usr/bin/env node
 
-/*
-Flags:
-    -h || --help
-    -p || --plain
-*/
-
-exports.runHelp = (process.argv.includes('--help') || process.argv.includes('-h'));
-exports.doPrintPlain = (process.argv.includes('--plain') || process.argv.includes('-p'));
+exports.showHelp = (process.argv.includes('-h') || process.argv.includes('--help'));
+exports.showVersion = (process.argv.includes('-v') || process.argv.includes('--version'));
+exports.doPrintPlain = (process.argv.includes('-p') || process.argv.includes('--plain'));

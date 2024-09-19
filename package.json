@@ -1,10 +1,10 @@
 {
   "name": "speed-cloudflare-cli-lite",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "Measure the speed and consistency of your internet connection using speed.cloudflare.com. Doesn't run 100MB download speed test by default.",
   "main": "cli.js",
   "bin": {
-    "speed-cloudflare-cli-lite": "./cli.js"
+    "speed-cloudflare-cli-lite": "./speed-cloudflare-cli-lite.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -27,8 +27,8 @@
     "upload"
   ],
   "contributors": [
-    "Tomás Arias <hi@tomasarias.me>",
-    "Nicholas Madison <nicholas705m@gmail.com>"
+    "Nicholas Madison <nicholas705m@gmail.com>",
+    "Tomás Arias <hi@tomasarias.me>"
   ],
   "license": "MIT",
   "bugs": {
