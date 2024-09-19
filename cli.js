@@ -1,5 +1,13 @@
 #!/usr/bin/env node
 
+/*
+Flags:
+--plain
+*/
+
+
+exports.doFormat = !process.argv.includes('--plain');
+
 const { performance } = require("perf_hooks");
 const https = require("https");
 const { magenta, bold, yellow, green, blue } = require("./chalk.js");
