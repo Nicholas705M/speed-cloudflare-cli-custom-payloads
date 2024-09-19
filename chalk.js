@@ -1,27 +1,19 @@
 const args = require('./args.js');
-
-exports.magenta = (...params) => {
-    if (args.doPrintPlain) {
-        return params.join(' ');
-    }
-
-    return `\u001b[35m${params.join(' ')}\u001b[0m`;
-}
+const FORMAT = {
+    CLEAN:      `\u001b[0m`, 
+    BOLD:       `\u001b[1m`,
+    GREEN:      `\u001b[32m`,
+    YELLOW:     `\u001b[33m`,
+    BLUE:       `\u001b[34m`,
+    MAGENTA:    `\u001b[35m`,
+};
 
 exports.bold = (...params) => {
     if (args.doPrintPlain) {
         return params.join(' ');
     }
 
-    return `\u001b[1m${params.join(' ')}\u001b[0m`;
-}
-
-exports.yellow = (...params) => {
-    if (args.doPrintPlain) {
-        return params.join(' ');
-    }
-
-    return `\u001b[33m${params.join(' ')}\u001b[0m`;
+    return FORMAT.BOLD + params.join(' ') + FORMAT.CLEAN;
 }
 
 exports.green = (...params) => {
@@ -29,7 +21,15 @@ exports.green = (...params) => {
         return params.join(' ');
     }
 
-    return `\u001b[32m${params.join(' ')}\u001b[0m`;
+    return FORMAT.GREEN + params.join(' ') + FORMAT.CLEAN;
+}
+
+exports.yellow = (...params) => {
+    if (args.doPrintPlain) {
+        return params.join(' ');
+    }
+
+    return FORMAT.YELLOW + params.join(' ') + FORMAT.CLEAN;
 }
 
 exports.blue = (...params) => {
@@ -37,5 +37,13 @@ exports.blue = (...params) => {
         return params.join(' ');
     }
 
-    return `\u001b[34m${params.join(' ')}\u001b[0m`;
+    return FORMAT.BLUE + params.join(' ') + FORMAT.CLEAN;
+}
+
+exports.magenta = (...params) => {
+    if (args.doPrintPlain) {
+        return params.join(' ');
+    }
+
+    return FORMAT.MAGENTA + params.join(' ') + FORMAT.CLEAN;
 }
