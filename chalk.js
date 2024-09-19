@@ -1,5 +1,5 @@
 const args = require('./args.js');
-const FORMAT = {
+const TERM = {
     CLEAN:      `\u001b[0m`, 
     BOLD:       `\u001b[1m`,
     GREEN:      `\u001b[32m`,
@@ -8,32 +8,29 @@ const FORMAT = {
     MAGENTA:    `\u001b[35m`,
 };
 
-exports.bold = (...params) => {
+exports.TERM = TERM;
+exports.format = (terminalCode, ...params) => {
     return args.doPrintColor 
-        ? FORMAT.BOLD + params.join(' ') + FORMAT.CLEAN
+        ? terminalCode + params.join(' ') + TERM.CLEAN
         : params.join(' ');
+}
+
+exports.bold = (...params) => {
+    return this.format(TERM.BOLD, ...params);
 }
 
 exports.green = (...params) => {
-    return args.doPrintColor 
-        ? FORMAT.GREEN + params.join(' ') + FORMAT.CLEAN
-        : params.join(' ');
+    return this.format(TERM.GREEN, ...params);
 }
 
 exports.yellow = (...params) => {
-    return args.doPrintColor 
-        ? FORMAT.YELLOW + params.join(' ') + FORMAT.CLEAN
-        : params.join(' ');
+    return this.format(TERM.YELLOW, ...params);
 }
 
 exports.blue = (...params) => {
-    return args.doPrintColor 
-        ? FORMAT.BLUE + params.join(' ') + FORMAT.CLEAN
-        : params.join(' ');
+    return this.format(TERM.BLUE, ...params);
 }
 
 exports.magenta = (...params) => {
-    return args.doPrintColor 
-        ? FORMAT.MAGENTA + params.join(' ') + FORMAT.CLEAN
-        : params.join(' ');
+    return this.format(TERM.MAGENTA, ...params);
 }
