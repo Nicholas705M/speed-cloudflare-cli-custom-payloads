@@ -15,22 +15,8 @@ exports.format = (terminalCode, ...params) => {
         : params.join(' ');
 }
 
-exports.bold = (...params) => {
-    return this.format(TERM.BOLD, ...params);
-}
-
-exports.green = (...params) => {
-    return this.format(TERM.GREEN, ...params);
-}
-
-exports.yellow = (...params) => {
-    return this.format(TERM.YELLOW, ...params);
-}
-
-exports.blue = (...params) => {
-    return this.format(TERM.BLUE, ...params);
-}
-
-exports.magenta = (...params) => {
-    return this.format(TERM.MAGENTA, ...params);
-}
+exports.bold = (...params) => this.format(TERM.BOLD, ...params);
+exports.green = (...params) => this.format(TERM.GREEN, ...params);
+exports.yellow = (...params) => this.format(TERM.YELLOW, ...params);
+exports.blue = (...params) => this.format(TERM.BLUE, ...params);
+exports.magenta = (...params) => this.format(TERM.MAGENTA, ...params);
