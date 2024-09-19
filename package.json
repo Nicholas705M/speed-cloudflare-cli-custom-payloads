@@ -1,17 +1,17 @@
 {
-  "name": "speed-cloudflare-cli",
-  "version": "2.0.3",
-  "description": "Measure the speed and consistency of your internet connection using speed.cloudflare.com",
+  "name": "speed-cloudflare-cli-lite",
+  "version": "2.1.0",
+  "description": "Measure the speed and consistency of your internet connection using speed.cloudflare.com. Doesn't run 100MB download speed test by default.",
   "main": "cli.js",
   "bin": {
-    "speed-cloudflare-cli": "./cli.js"
+    "speed-cloudflare-cli-lite": "./cli.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/KNawm/speed-cloudflare-cli.git"
+    "url": "git+https://github.com/Nicholas705M/speed-cloudflare-cli-lite.git"
   },
   "keywords": [
     "bandwidth",
@@ -26,12 +26,15 @@
     "test",
     "upload"
   ],
-  "author": "Tomás Arias <hi@tomasarias.me>",
+  "contributors": [
+    "Tomás Arias <hi@tomasarias.me>",
+    "Nicholas Madison <nicholas705m@gmail.com>"
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/KNawm/speed-cloudflare-cli/issues"
+    "url": "https://github.com/Nicholas705M/speed-cloudflare-cli-lite/issues"
   },
-  "homepage": "https://github.com/KNawm/speed-cloudflare-cli#readme",
+  "homepage": "https://github.com/Nicholas705M/speed-cloudflare-cli-lite#readme",
   "devDependencies": {
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
