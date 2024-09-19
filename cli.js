@@ -229,30 +229,47 @@ async function speedTest() {
 
     logLatency(ping);
     
+    /* ---------- */
+    const testDown1 = await measureDownload(101000, 10);
+    logSpeedTestResult("100kB", testDown1);
+  
+    const testDown2 = await measureDownload(1001000, 8);
+    logSpeedTestResult("1MB", testDown2);
+  
+    const testDown3 = await measureDownload(10001000, 6);
+    logSpeedTestResult("10MB", testDown3);
+  
+    const testDown4 = await measureDownload(25001000, 4);
+    logSpeedTestResult("25MB", testDown4);
+  
+    const downloadTests = [...testDown1, ...testDown2, ...testDown3, ...testDown4];
+    logDownloadSpeed(downloadTests);
+    /* ---------- */
+
     // [testSizeMB, testIterations]
-    const downloadTests = [
-        [0.1, 8], 
-        [1, 8],
-        [10, 6],
-        [25, 4]
-    ];
+    // const downloadTests = [
+    //     [0.1, 8], 
+    //     [1, 8],
+    //     [10, 6],
+    //     [25, 4]
+    // ];
 
-    var downloadTestResults = [];
-    for (test of downloadTests) {
-        const payloadSize = test[0];
-        const iterations = test[0];
-        const bytes = (payloadSize * 1000000) + 1000;
-        const result = await measureDownload(bytes, iterations);
+    // var downloadTestResults = [];
+    // for (test of downloadTests) {
+    //     const payloadSize = test[0];
+    //     const iterations = test[0];
+    //     const bytes = (payloadSize * 1000000) + 1000;
+    //     const result = await measureDownload(bytes, iterations);
 
-        var label = payloadSize + "MB";
-        if (payloadSize < 1) {
-            label = (1000 * payloadSize) + "kB";
-        }
+    //     var label = payloadSize + "MB";
+    //     if (payloadSize < 1) {
+    //         label = (1000 * payloadSize) + "kB";
+    //     }
 
-        logSpeedTestResult(label, result);
-        downloadTestResults = [...downloadTestResults, ...result];
-    }
-    logDownloadSpeed(downloadTestResults);
+    //     logSpeedTestResult(label, result);
+    //     downloadTestResults = [...downloadTestResults, ...result];
+    // }
+    // logDownloadSpeed(downloadTestResults);
 
     const testUp1 = await measureUpload(11000, 10);
     const testUp2 = await measureUpload(101000, 10);
