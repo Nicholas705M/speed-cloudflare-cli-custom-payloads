@@ -1,6 +1,6 @@
 {
   "name": "speed-cloudflare-cli-lite",
-  "version": "2.2.7",
+  "version": "2.2.8",
   "description": "Measure the speed and consistency of your internet connection using speed.cloudflare.com. Doesn't run 100MB download speed test or color/bold output text by default.",
   "main": "cli.js",
   "bin": {
@@ -36,6 +36,7 @@
   },
   "homepage": "https://github.com/Nicholas705M/speed-cloudflare-cli-lite#readme",
   "dependencies": {
+    "@cloudflare/speedtest": "^1.3.0",
     "speed-cloudflare-cli-lite": "^2.2.2"
   }
 }

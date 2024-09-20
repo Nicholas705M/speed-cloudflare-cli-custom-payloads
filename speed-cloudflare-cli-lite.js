@@ -240,8 +240,7 @@ async function speedTest() {
     const downloadTests = [ // [testSizeMB, testIterations]
         [0.1, 10], 
         [1, 8],
-        [10, 6],
-        [25, 4]
+        [10, 6]
     ];
 
     var downloadTestResults = [];
@@ -261,9 +260,9 @@ async function speedTest() {
     }
     logDownloadSpeed(downloadTestResults);
 
-    const testUp1 = await measureUpload(11000, 10);
-    const testUp2 = await measureUpload(101000, 10);
-    const testUp3 = await measureUpload(1001000, 8);
+    const testUp1 = await measureUpload(11000, 8);
+    const testUp2 = await measureUpload(101000, 6);
+    const testUp3 = await measureUpload(1001000, 4);
     const uploadTests = [...testUp1, ...testUp2, ...testUp3];
     logUploadSpeed(uploadTests);
 }
